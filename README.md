@@ -3,7 +3,9 @@
 ## 👀 Lời nói đầu
 
 > Phần mềm này được viết dựa trên ý tưởng của **Dũng Lại Lập Trình**
+
 Vì thế, hãy dành ra vài giây để subscribe kênh của anh ấy
+
 Ấn [vào đây](https://www.youtube.com/channel/UCMYT8xymrm4VOP241b86MCQ) để subscribe kênh youtube tuyệt vời của anh ấy
 ![Kênh Youtube Của Dũng Lại Lập Trình](https://i.imgur.com/xM0v6cc.png)
 ## 🌱 Hướng dẫn sử dụng
