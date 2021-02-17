@@ -6,7 +6,7 @@
 >
 > Vì thế, hãy dành ra vài giây để subscribe kênh của anh ấy
 > 
-> Ấn [vào đây](https://www.youtube.com/channel/UCMYT8xymrm4VOP241b86MCQ) để truy cập kênh youtube Dũng Lại Lập Trình
+> Ấn [vào đây](https://www.youtube.com/channel/UCMYT8xymrm4VOP241b86MCQ) để truy cập kênh youtube **Dũng Lại Lập Trình**
 > ![Kênh Youtube Của Dũng Lại Lập Trình](https://i.imgur.com/xM0v6cc.png)
 ## 🌱 Hướng dẫn sử dụng
 > Toàn bộ hướng dẫn chi tiết có thể xem [tại đây](https://youtu.be/Z0Jfcv29Cy8?t=1935)
